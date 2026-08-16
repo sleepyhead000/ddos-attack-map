@@ -1,0 +1,17 @@
+{
+  "name": "ddos-attack-map",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Real-time DDoS attack map - 3D globe visualization with simulated traffic",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,magenta \"npm run dev -w @ddos/backend\" \"npm run dev -w @ddos/frontend\"",
+    "build": "npm run build -w @ddos/backend && npm run build -w @ddos/frontend",
+    "test": "npm run test -ws --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
